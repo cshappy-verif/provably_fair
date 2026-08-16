@@ -28,7 +28,7 @@ Prefer to explore first? The **example buttons** (case / upgrade / contract / no
    - **Upgrade**: win if `roll < shown_chance_ppm`.
    - **Contract**: `cell = floor(roll × K / 1 000 000)` picks a value-multiplier from the committed table; payout = `all_price × ratio`.
 
-The `server_seed` becomes public only **after** the version/epoch rotates. Until then the roll can’t be recomputed — that’s the commitment, not a bug.
+The `server_seed` becomes public only **after** the version rotates. Until then the roll can’t be recomputed — that’s the commitment, not a bug.
 
 ### Trust model
 Nothing here talks to CSHAPPY servers to “ask” if a roll was fair — it **proves** it from public values you already hold. Open source, no build step, no dependencies.
@@ -55,7 +55,7 @@ Nothing here talks to CSHAPPY servers to “ask” if a roll was fair — it **p
    - **Апгрейд**: победа, если `roll < shown_chance_ppm`.
    - **Контракт**: `ячейка = floor(roll × K / 1 000 000)` выбирает множитель ценности из зафиксированной таблицы; выплата = `сумма × множитель`.
 
-`server_seed` становится публичным только **после** ротации версии/эпохи. До этого Roll пересчитать нельзя — это и есть коммитмент, а не ошибка.
+`server_seed` становится публичным только **после** смены версии. До этого Roll пересчитать нельзя — это и есть коммитмент, а не ошибка.
 
 ### Модель доверия
 Страница ничего не «спрашивает» у серверов CSHAPPY — она **доказывает** честность из публичных значений, которые у вас уже есть. Открытый исходник, без сборки и зависимостей.
