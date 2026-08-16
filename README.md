@@ -4,7 +4,7 @@
 
 A single-file, fully client-side verifier for CSHAPPY Provably Fair rolls (cases, upgrades, contracts). Paste the JSON of your roll and every step of the fairness math is recomputed **in your browser** — no server, no tracking, no libraries.
 
-**Live:** https://cshappy-com.github.io/provably_fair/
+**Live:** https://cshappy-verif.github.io/provably_fair/
 
 ---
 
@@ -14,7 +14,7 @@ A single-file, fully client-side verifier for CSHAPPY Provably Fair rolls (cases
 `index.html` is a standalone page. Everything runs locally via the browser's built-in **WebCrypto** — the only network requests are for the skin icons (Steam CDN). You can also save the file and open it, or paste it into any online sandbox (JSFiddle / CodePen). It must be served over **https** (or `http://localhost`), which is what `crypto.subtle` requires.
 
 ### How to use
-1. On the roll page at **cshappy.com** press **“Пересчитать в браузере”** (Recompute in browser) to copy the roll JSON.
+1. On the roll page at **cshappy.com** press **“Копировать JSON”** (Copy JSON) to copy the roll JSON.
 2. Paste it into the field and press **Проверить** (Verify).
 3. The page recomputes each step and shows whether it matches what the server committed.
 
@@ -41,7 +41,7 @@ Nothing here talks to CSHAPPY servers to “ask” if a roll was fair — it **p
 `index.html` — автономная страница. Вся криптография считается локально через встроенный в браузер **WebCrypto**; единственные внешние запросы — за иконками скинов (Steam-CDN). Файл можно сохранить и открыть, или вставить в любую онлайн-песочницу (JSFiddle / CodePen). Открывать нужно по **https** (или `http://localhost`) — этого требует `crypto.subtle`.
 
 ### Как пользоваться
-1. На странице ролла на **cshappy.com** нажмите **«Пересчитать в браузере»** — JSON ролла скопируется в буфер.
+1. На странице ролла на **cshappy.com** нажмите **«Копировать JSON»** — JSON ролла скопируется в буфер.
 2. Вставьте его в поле и нажмите **«Проверить»**.
 3. Страница пересчитает каждый шаг и покажет, сходится ли он с тем, что сервер зафиксировал.
 
