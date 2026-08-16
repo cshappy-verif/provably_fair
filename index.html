@@ -6,7 +6,7 @@
   HTML) или откройте по https / http://localhost — WebCrypto требует secure-context.
   Криптография считается локально; за иконками скинов идёт запрос в Steam-CDN.
 
-  Поля JSON (кнопка «Пересчитать в браузере» на cshappy.com кладёт их в буфер):
+  Поля JSON (кнопка «Копировать JSON» на cshappy.com кладёт их в буфер):
     core.server_seed_hash — Public Hash (SHA-256 от Server Seed), опубликован ДО игры
     core.server_seed      — Server Seed, появляется ПОСЛЕ раскрытия (ротации)
     core.client_seed      — ваш Client Seed
@@ -90,6 +90,8 @@
 
   .item{display:flex;gap:14px;align-items:center;background:var(--card2);border:1px solid var(--line);border-radius:14px;padding:14px}
   .item .thumb{width:120px;height:76px;border-radius:10px;flex:0 0 auto;background:linear-gradient(135deg,#232a3a,#151a26);display:grid;place-items:center;overflow:hidden}
+  .thumb{overflow:hidden}
+  .thumb img{max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain;display:block}
   .item .thumb img{max-width:112px;max-height:70px;object-fit:contain}
   .item .thumb .ph{color:var(--muted);font-family:var(--mono);font-size:12px}
   .item .meta{flex:1;min-width:0}
@@ -148,7 +150,7 @@
   </header>
 
   <h1>Независимая проверка Provably Fair</h1>
-  <p class="sub">Вставьте JSON, скопированный кнопкой «Пересчитать в браузере» на <a href="https://cshappy.com/provably-fair" target="_blank" rel="noopener">странице проверки CSHAPPY</a>, и нажмите «Проверить». Каждый шаг пересчитывается локально в вашем браузере.</p>
+  <p class="sub">Вставьте JSON, скопированный кнопкой «Копировать JSON» на <a href="https://cshappy.com/provably-fair" target="_blank" rel="noopener">странице проверки CSHAPPY</a>, и нажмите «Проверить». Каждый шаг пересчитывается локально в вашем браузере.</p>
 
   <div class="card">
     <span class="caption">Данные ролла</span>
@@ -221,7 +223,7 @@ const stepBlock=(ok,title,body)=>`<div class="step ${ok?'ok':'fail'}"><div class
 /* ===== Основная проверка ===== */
 async function verify(){
   out.innerHTML='';
-  let data; try{data=JSON.parse(document.getElementById('in').value);}catch{ banner('fail','Это не JSON','Скопируйте данные кнопкой «Пересчитать в браузере» и вставьте целиком.'); return; }
+  let data; try{data=JSON.parse(document.getElementById('in').value);}catch{ banner('fail','Это не JSON','Скопируйте данные кнопкой «Копировать JSON» и вставьте целиком.'); return; }
   const isGame=!!data.core&&!!data.mechanic&&data.mechanic!=='case';
   const core=data.core||data;
   const mechanic=isGame?data.mechanic:'case';
